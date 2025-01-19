@@ -31,3 +31,8 @@ class Database:
     
     def get_passwords(self):
         return self.read_data()
+    
+    def delete_password(self, service, userid):
+        data = self.read_data()
+        updated_data = [entry for entry in data if not (entry["service"] == service and entry[userid] == userid)]
+        self.write_data(updated_data)
