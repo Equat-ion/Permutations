@@ -26,6 +26,8 @@ class Encryption:
         return key.decode()
     
 
+
+
 """Class test"""
 
 # key = Encryption.keygen()
@@ -36,3 +38,4 @@ class Encryption:
 # decrypted = encryption.decrypt(encrypted)
 # print("Decrypted:", decrypted)
 
+"""Class test ends"""
