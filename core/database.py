@@ -36,3 +36,14 @@ class Database:
         data = self.read_data()
         updated_data = [entry for entry in data if not (entry["service"] == service and entry[userid] == userid)]
         self.write_data(updated_data)
+
+    def update_password(self, service, userid, new_enc_passwd):
+        data = self.read_data()
+        for entry in data:
+            if entry["service"] == service and entry["userid"] == userid:
+                entry["password"] = new_enc_passwd
+
+                break
+
+            self.write_data(data)
+        
