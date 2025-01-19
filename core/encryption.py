@@ -35,3 +35,4 @@ class Encryption:
 # print("Encrypted:", encrypted)
 # decrypted = encryption.decrypt(encrypted)
 # print("Decrypted:", decrypted)
+
