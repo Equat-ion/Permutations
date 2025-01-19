@@ -4,7 +4,7 @@ class Encryption:
     
     def __init__(self,key=None):
         if key:
-            self.cipher() = Fernet(key)
+            self.cipher = Fernet(key)
         else:
             raise ValueError("A Valid key must be provided")
         
