@@ -28,10 +28,12 @@ class Encryption:
 
 """Class test"""
 
-key = Encryption.keygen()
-print("Generated Key:", key)
-encryption = Encryption(key)
-encrypted = encryption.encrypt("myPassword123")
-print("Encrypted:", encrypted)
-decrypted = encryption.decrypt(encrypted)
-print("Decrypted:", decrypted)
+# key = Encryption.keygen()
+# print("Generated Key:", key)
+# encryption = Encryption(key)
+# encrypted = encryption.encrypt("myPassword123")
+# print("Encrypted:", encrypted)
+# decrypted = encryption.decrypt(encrypted)
+# print("Decrypted:", decrypted)
+
+print(Encryption(key="lol"))
