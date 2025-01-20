@@ -14,23 +14,6 @@
 - **Cross-platform Compatibility**: The app supports Windows, macOS, and Linux, storing data in appropriate system-specific directories.
 - **Modular Frontends**: Choose your preferred user interface, whether graphical or text-based.
 
-### Directory Structure
-
-```
-permutations/
-├── core/
-│   ├── __init__.py
-│   ├── core_app.py  # Main application logic
-│   ├── database.py  # Handles JSON-based storage
-│   └── encryption.py  # Handles encryption and decryption
-├── frontends/
-│   ├── qt6/  # Qt6 GUI for KDE
-│   ├── gtk4/  # GTK4 Libadwaita GUI for GNOME
-│   ├── winui/  # WinUI Mica interface for Windows
-│   └── tui/  # Text-based user interface
-├── README.md  # Project documentation
-└── requirements.txt  # Python dependencies
-```
 
 ### Requirements
 
@@ -70,20 +53,11 @@ permutations/
 
 - **UI Enhancements**: Full support for modular frontends.
 - **Windows Installer**: Easy-to-use installer for Windows users.
-- **Icon Design**: Custom app icon for better branding.
-
-### Security Considerations
-
-- Ensure the encryption key is securely stored and not exposed.
-- Use the application in a trusted environment to prevent unauthorized access.
 
 ### Contributing
 
-Contributions are welcome! Feel free to fork the repository and submit a pull request.
+Contributions are welcomed! Feel free to submit a pull request or Contact me.
 
-### License
-
-This project is licensed under the GNU GPL v3 License.
 
 ---
 
