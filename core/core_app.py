@@ -24,7 +24,7 @@ else:
 class PassMan:
     def __init__(self, encryption_key, db_filepath=data_filepath/"passwords.json"):
         self.encryption = Encryption(encryption_key)
-        self.database = Encryption(db_filepath)
+        self.database = Database(db_filepath)
     
     def add_passwd(self, service, userid, password):
         encrypted_passwd = self.encryption.encrypt(password)
