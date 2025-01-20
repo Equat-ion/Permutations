@@ -23,7 +23,7 @@ class Database:
         entry = {
             "service": service,
             "userid": userid,
-            "encrypted_password": encrypted_password
+            "password": encrypted_password
         }
 
         data.append(entry)
