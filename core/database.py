@@ -45,5 +45,6 @@ class Database:
 
                 break
 
-            self.write_data(data)
+        self.write_data(data)
+        print(f"Password for {service} updated successfully!")
         
