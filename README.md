@@ -17,9 +17,7 @@
 
 ### Requirements
 
-- Python 3.10+
-- `cryptography` library
-- `PyQt6`, `PyGObject`, or other UI libraries depending on the frontend you choose.
+- Python 3.10+ and its inbuilt modules
 
 ### Installation
 
