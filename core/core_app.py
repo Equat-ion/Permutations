@@ -63,8 +63,8 @@ class PassMan:
 
 if __name__ == "__main__":
 
-    
-    manager = PassMan(encryption_key)
+    masterkey = derive_key(input("Enter your Master Password: "))
+    manager = PassMan(encryption_key=masterkey)
 
     while True:
         print("\nPassword Manager\n")
