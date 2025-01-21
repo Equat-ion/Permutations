@@ -43,7 +43,7 @@ class PassMan:
             print("No Passwords found")
             return
         
-        print("\n Saved Passwords: ")
+        print("\nSaved Passwords: ")
         for entry in entries:
             decrypted_passwd = self.encryption.decrypt(entry["password"])
             print(f"Service: {entry["service"]}, Username: {entry["userid"]}, Password: {decrypted_passwd}")
