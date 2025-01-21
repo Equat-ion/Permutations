@@ -7,7 +7,7 @@ import hashlib
 import base64
 
 def derive_key(master_password):
-    key = hashlib.sha256(master_password)
+    key = hashlib.sha256(master_password).digest()
     key = base64.urlsafe_b64encode(key)
 
     return key
