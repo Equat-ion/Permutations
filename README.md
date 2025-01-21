@@ -26,17 +26,11 @@
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/permutations.git
-   cd permutations
+   git clone https://github.com/Equat-ion/permutations.git
+   cd ./permutations/core
    ```
 
-2. Install dependencies:
-
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. Run the application:
+2. Run the application:
 
    ```bash
    python -m core.core_app
