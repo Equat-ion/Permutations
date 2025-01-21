@@ -6,6 +6,11 @@ import platform
 import hashlib
 import base64
 
+def derive_key(master_password):
+    key = hashlib.sha256(master_password)
+    key = base64.urlsafe_b64decode(key)
+
+    return key
 
 encryption_key = b"86sn3NYCM_CHc7Kq5qe2qjFCjcb1B6tf9KeNlOUMhm0=" # TEMPORARY KEY
 
