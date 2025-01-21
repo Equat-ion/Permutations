@@ -46,7 +46,7 @@ class PassMan:
 
     def update_passwd(self, service, userid, new_password):
         encrypted_passwd = self.encryption.encrypt(new_password)
-        self.database.update_password(service, userid, encrypted_passwd)
+        self.database.update_password(service, userid, new_enc_passwd=encrypted_passwd)
 
         print(f"Password for {service} updated successfully!")
 
