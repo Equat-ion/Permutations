@@ -33,7 +33,7 @@
 2. Run the application:
 
    ```bash
-   python -m core.core_app
+   python -u ./core_app.py
    ```
 
 ### Usage
