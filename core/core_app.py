@@ -3,6 +3,8 @@ from database import Database
 from pathlib import Path
 import os
 import platform
+import hashlib
+import base64
 
 
 encryption_key = b"86sn3NYCM_CHc7Kq5qe2qjFCjcb1B6tf9KeNlOUMhm0=" # TEMPORARY KEY
@@ -56,6 +58,7 @@ class PassMan:
 
 if __name__ == "__main__":
 
+    
     manager = PassMan(encryption_key)
 
     while True:
