@@ -7,13 +7,10 @@ import hashlib
 import base64
 
 def derive_key(master_password):
-    key = hashlib.sha256(master_password).digest()
+    key = hashlib.sha256(master_password.encode()).digest()
     key = base64.urlsafe_b64encode(key)
 
     return key
-
-encryption_key = b"86sn3NYCM_CHc7Kq5qe2qjFCjcb1B6tf9KeNlOUMhm0=" # TEMPORARY KEY
-
 
 if os.name == 'nt':  # Windows
     data_filepath = Path(os.getenv("APPDATA")) / "permutations"
