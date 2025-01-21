@@ -6,7 +6,7 @@ class Database:
         
         self.filepath = filepath
 
-        if not os.path.exists(self.filepath):
+        if not os.path.exists(self.filepath) or os.path.getsize(self.filepath) == 0:
             with open(self.filepath, 'w') as db:
                 json.dump([], db)
 
