@@ -5,6 +5,9 @@ import os
 import platform
 
 
+encryption_key = b"86sn3NYCM_CHc7Kq5qe2qjFCjcb1B6tf9KeNlOUMhm0=" # TEMPORARY KEY
+
+
 if os.name == 'nt':  # Windows
     data_filepath = Path(os.getenv("APPDATA")) / "permutations"
 elif os.name == 'posix':
@@ -52,7 +55,6 @@ class PassMan:
         print(f"Password for {service} has been deleted successfully!")
 
 if __name__ == "__main__":
-    encryption_key = Encryption.keygen()
 
     manager = PassMan(encryption_key)
 
@@ -67,6 +69,7 @@ if __name__ == "__main__":
         print("\nEnter the operation number [1-5]\n")
 
         choice = int(input("==> "))
+
 
         if choice == 1:
 
