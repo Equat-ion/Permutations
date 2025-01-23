@@ -20,6 +20,10 @@ class Database:
 
     def add_password(self, service, userid, encrypted_password):
         data = self.read_data()
+        for entry in data:
+            if entry["service"] == service and entry["userid"] == userid:
+                raise ValueError(f"Entry for {service} and Username {userid} already exists!")
+            
         entry = {
             "service": service,
             "userid": userid,
