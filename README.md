@@ -20,7 +20,7 @@
 
    ```bash
    git clone https://github.com/Equat-ion/permutations.git
-   cd ./permutations/core
+   cd ./permutations/src
    ```
 
 2. Run the application:
