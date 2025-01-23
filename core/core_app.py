@@ -26,7 +26,7 @@ elif os.name == 'posix':
 else:
     raise ValueError(f"Unsupported OS: {os.name}")
 
-
+os.makedirs(data_filepath, exist_ok=True)
 
 class PassMan:
     def __init__(self, encryption_key, db_filepath=data_filepath/"passwords.json"):
