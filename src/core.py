@@ -28,6 +28,7 @@ else:
 
 os.makedirs(data_filepath, exist_ok=True)
 
+
 class PassMan:
     def __init__(self, encryption_key, db_filepath=data_filepath/"passwords.json"):
         self.encryption = Encryption(encryption_key)
