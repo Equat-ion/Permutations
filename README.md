@@ -1,23 +1,18 @@
 # Permutations
 
-**Permutations** is a local password manager built in Python. It allows users to securely store, view, update, and delete their passwords for various services. The app is modular and provides support for multiple user interfaces, including:
+**Permutations** is a local password manager built in Python. It allows users to securely store, view, update, and delete their passwords for various services. 
 
-- **Qt6** (for KDE Plasma builds)
-- **GTK4 Libadwaita** (for GNOME builds)
-- **WinUI Mica** (for Windows builds)
-- **TUI** (Text User Interface)
 
 ### Features
 
 - **Secure Encryption**: Passwords are encrypted using the Fernet symmetric encryption algorithm from the `cryptography` library.
 - **JSON-based Storage**: Passwords are stored in a lightweight, portable JSON file, eliminating the need for a database.
 - **Cross-platform Compatibility**: The app supports Windows, macOS, and Linux, storing data in appropriate system-specific directories.
-- **Modular Frontends**: Choose your preferred user interface, whether graphical or text-based.
 
 
 ### Requirements
 
-- Python 3.10+ and its inbuilt modules
+- Python 3.10+ and cryptography module
 
 ### Installation
 
@@ -31,7 +26,7 @@
 2. Run the application:
 
    ```bash
-   python -u ./core_app.py
+   python -u ./core.py
    ```
 
 ### Usage
@@ -43,7 +38,7 @@
 
 ### Planned Features
 
-- **UI Enhancements**: Full support for modular frontends.
+- **UI Enhancements**: Multiple Native User Interface including WinUI3 and Libadwaita.
 - **Windows Installer**: Easy-to-use installer for Windows users.
 
 ### Contributing
