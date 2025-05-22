@@ -38,7 +38,7 @@
 
 ### Planned Features
 
-- **UI Enhancements**: Multiple Native User Interfaces including WinUI3 and Libadwaita.
+- **UI Enhancements**: Native UI like Libadwaita for GNOME.
 - **Windows Installer**: Easy-to-use installer for Windows users.
 
 ### Contributing
