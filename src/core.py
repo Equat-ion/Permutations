@@ -18,7 +18,7 @@ elif os.name == 'posix':
     import platform
     system = platform.system()
     if system == 'Darwin':  # macOS
-        data_filepath = Path.home() /"Library"/"Application"/"Support"/"permutations"
+        data_filepath = Path.home() /"Library"/"Application Support"/"permutations"
     elif system == 'Linux':  # Linux
         data_filepath = Path.home() /".local"/"share"/"permutations"
     else:
@@ -43,7 +43,7 @@ class PassMan:
             print("No Passwords found")
             return
         
-        print("\nSaved Passwords: ")
+        print("\nSaved Passwords: \n")
         for entry in entries:
             decrypted_passwd = self.encryption.decrypt(entry["password"])
             print(f"Service: {entry["service"]}, Username: {entry["userid"]}, Password: {decrypted_passwd}")
