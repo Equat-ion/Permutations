@@ -1,54 +1,56 @@
-import json 
+import sqlite3
 import os
 
 class Database:
-    def __init__(self, filepath="passwords.json"):
-        
-        self.filepath = filepath
+    def __init__(self):
+        # Connect to SQLite database file
+        self.conn = sqlite3.connect("passwords.db")
+        self.cursor = self.conn.cursor()
 
-        if not os.path.exists(self.filepath) or os.path.getsize(self.filepath) == 0:
-            with open(self.filepath, 'w') as db:
-                json.dump([], db)
-
-    def read_data(self):
-        with open(self.filepath, 'r') as db:
-            return json.load(db)
-    
-    def write_data(self,data):
-        with open(self.filepath, 'w') as db:
-            json.dump(data, db, indent=4)
+        # Create table if it doesn't exist
+        self.cursor.execute('''
+            CREATE TABLE IF NOT EXISTS passwords (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                service TEXT NOT NULL,
+                username TEXT NOT NULL,
+                password TEXT NOT NULL
+            )
+        ''')
+        self.conn.commit()
 
     def add_password(self, service, userid, encrypted_password):
-        data = self.read_data()
-        for entry in data:
-            if entry["service"] == service and entry["userid"] == userid:
-                raise ValueError(f"Entry for {service} and Username {userid} already exists!")
-            
-        entry = {
-            "service": service,
-            "userid": userid,
-            "password": encrypted_password
-        }
+        self.cursor.execute(
+            "INSERT INTO passwords (service, username, password) VALUES (?, ?, ?)",
+            (service, userid, encrypted_password)
+        )
+        self.conn.commit()
 
-        data.append(entry)
-        self.write_data(data)
-    
     def get_passwords(self):
-        return self.read_data()
-    
+        self.cursor.execute("SELECT service, username, password FROM passwords")
+        results = self.cursor.fetchall()
+
+        entries = []
+        for row in results:
+            entries.append({
+                "service": row[0],
+                "userid": row[1],
+                "password": row[2]
+            })
+        return entries
+
     def delete_password(self, service, userid):
-        data = self.read_data()
-        updated_data = [entry for entry in data if not (entry["service"] == service and entry["userid"] == userid)]
-        self.write_data(updated_data)
+        self.cursor.execute(
+            "DELETE FROM passwords WHERE service = ? AND username = ?",
+            (service, userid)
+        )
+        self.conn.commit()
 
     def update_password(self, service, userid, new_enc_passwd):
-        data = self.read_data()
-        for entry in data:
-            if entry["service"] == service and entry["userid"] == userid:
-                entry["password"] = new_enc_passwd
+        self.cursor.execute(
+            "UPDATE passwords SET password = ? WHERE service = ? AND username = ?",
+            (new_enc_passwd, service, userid)
+        )
+        self.conn.commit()
 
-                break
-
-        self.write_data(data)
-        print(f"Password for {service} updated successfully!")
-        
+    def close(self):
+        self.conn.close()
